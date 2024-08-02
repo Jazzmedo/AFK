@@ -1,0 +1,81 @@
+/* Custom navbar background */
+.navbar.bg-black {
+    background-color: #000 !important;
+  }
+  
+  /* Search container styles */
+  .search-input {
+    display: none; /* Default to hidden */
+    width: 100%;
+    margin-right: 0.5rem;
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 767px) {
+    .navbar-nav {
+      margin-bottom: 0;
+    }
+    .search-input {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  /* Media query for medium and larger screens */
+  @media (min-width: 768px) {
+    .search-input {
+      display: block; /* Ensure it's visible on larger screens */
+    }
+  }
+  ul li{
+    padding-left: 50px;
+  }
+
+  .navbar{
+    background-color: #333b6a !important;
+  }
+
+  .dropdown-menu{
+    max-height: 200px;
+    overflow-y: auto;
+    
+  }
+
+  .custom-scrollbar .dropdown-menu::-webkit-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+}
+
+.custom-scrollbar .dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: #333b6a; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.custom-scrollbar .dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #333b6a; /* Color when hovered */
+}
+
+.custom-scrollbar .dropdown-menu::-webkit-scrollbar-track {
+  background: #b7feae; /* Remove the track background */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+}
+
+.dropdown-menu{
+  background-color: #b7feae !important;
+  color: '#b7feae'
+}
+
+.dropdown-menu .dropdown-item{
+  background-color: #b7feae !important;
+  color: '#b7feae'
+}
+
+.dropdown-menu .dropdown-item:hover{
+  background-color: #b7feae !important;
+  color: '#b7feae'
+}
+.dropdown-menu .dropdown-item:active{
+  background-color: #b7feae !important;
+  color: '#b7feae'
+}
