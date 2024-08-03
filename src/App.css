@@ -1,10 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Mina:wght@400;700&display=swap');
 
-*{
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #333B6A #B7FEAE;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #B7FEAE;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B7FEAE;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B7FEAE;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #333B6A;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #333B6A;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #333B6A;
+}
+
+
+* {
   font-family: 'Mina', sans-serif;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: #333b6a;
   background: #b7feae;
 }
@@ -14,11 +54,15 @@
   background: #b7feae;
 }
 
-body{
-  background-color: #d4ffce5c;
+body {
+  background-image: url('./logo/3434.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.mina{
+.mina {
   font-family: 'Mina', sans-serif !important;
 }
 
@@ -56,6 +100,7 @@ body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

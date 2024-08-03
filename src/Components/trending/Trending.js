@@ -17,20 +17,17 @@ export default function Trending() {
 
     return (
         <>
-            <h1 style={{ marginTop: '50px', fontWeight: '700', color: '#333b6a' }} className='text-center'>Best Games</h1>
-            <div className='container'>
-                <div className='row'>
-                    {data.map((product) => {
-                        return (
-                            <div className='col-3'>
-                                {/* {console.log(product)} */}
-                                <Trending2 product={product} />
-                            </div>
-                        );
-                    })}
+            <h1 style={{ marginTop: '50px', fontWeight: '700', color: '#b7feae' }} className='text-center'>Best Games</h1>
+            <div className='row'>
+                {data.map((product) => {
+                    return (
+                        <div className='col-3'>
+                            {/* {console.log(product)} */}
+                            <Trending2 product={product} />
+                        </div>
+                    );
+                })}
 
-
-                </div>
             </div>
         </>
     )

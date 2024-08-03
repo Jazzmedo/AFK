@@ -1,17 +1,27 @@
+*{
+  font-weight: 600;
+}
+
 a {
   text-decoration: none;
   color: #b7feae;
 }
 
-.articles {
-  margin: 40px 0;
-  /* background-color: #333b6a; */
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.articles .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 40px;
+.articles {
+  margin: 30px 0;
+  /* background-color: #333b6a; */
+  
+  padding:20px
 }
 
 .articles .container .box img {
@@ -19,16 +29,41 @@ a {
   max-height: 100%;
 }
 
+.metacritic {
+  z-index: 5;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #333b6a;
+  color: #b7feae;
+  padding: 10px 10px 5px;
+  border-radius: 50px;
+  font-size: 12px;
+  width: 45px;
+  height: 45px;
+  max-width: 45px;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid #b7feae;
+  font-weight: 600;
+}
+
 
 .articles .text h2 {
   font-size: 20px;
   margin: 0;
   padding: 5px 0px;
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
 }
 
 .articles .dets {
   width: 100%;
-  height: 130px;
+  height: 150px;
 }
 
 .articles .text {
@@ -43,18 +78,22 @@ a {
 .articles .box {
   box-shadow: 0 5px 20px 10px rgba(0, 0, 0, 0.152);
   border-radius: 15px;
-  overflow: hidden;
-  transition: 1s;
-  background-color: #333b6a;
-  cursor:default
+  /* overflow: hidden; */
+  transition: 0.3s;
+  background-color: #333b6ac6;
+  backdrop-filter: blur(4px);
+  cursor:default;
+  position: relative;
 
 }
 
 .articles .backonly {
   width: 100%;
-  height: 180px;
+  height: 200px;
   background-size: cover;
   background-position: center;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .articles .text p {
@@ -62,13 +101,15 @@ a {
   line-height: 1.7;
   margin: 0;
   padding: 5px 0px;
+  text-align: center;
 }
 
 .articles .info {
-  padding: 20px;
+  padding: 15px;
   border-top: 1px solid #b7feae;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   gap: 15px;
 }
@@ -80,6 +121,7 @@ a {
   padding: 5px 10px;
   border-radius: 50px;
   background-color: #b7feae;
+  font-weight: 600;
 }
 
 .articles .info a,
@@ -94,6 +136,7 @@ a {
   transform: translateY(-20px);
   transition: 0.5s;
   box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.336);
+  
 
 }
 
