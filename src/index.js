@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import Platforms from './Components/platform/Platforms';
 import Trending from './Components/trending/Trending';
+import Genres from './Components/genres/Genres';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Game from './Components/game/Game';
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/platform/:pid",
         element: <Platforms />
+      },
+      {
+        path: "/genre/:gid",
+        element: <Genres />
       },
     ],
   },

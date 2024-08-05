@@ -1,0 +1,27 @@
+.game-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.game-container h1 {
+    color: #333;
+}
+
+.game-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.additional-info p {
+    margin: 10px 0;
+}
+
+.additional-info a {
+    color: #0077cc;
+}

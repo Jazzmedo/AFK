@@ -19,7 +19,6 @@ export default function MNavbar() {
   let [results, setResults] = useState([])
   let [searchh, setSearchh] = useState("")
 
-
   useEffect(() => {
     document.querySelector('.navbar').style.cssText = '';
     document.querySelectorAll('#basic-nav-dropdown').forEach(element => {
@@ -52,14 +51,23 @@ export default function MNavbar() {
   }, [searchh, results])
 
   function getData() {
-    axios.get(`https://api.rawg.io/api/genres?key=${api1}`).then(res => {
-      console.log(res.data.results)
-      setGenres(res.data.results)
-    })
-    axios.get(`https://api.rawg.io/api/platforms?key=${api1}`).then(res => {
-      console.log(res.data.results)
-      setPlatforms(res.data.results)
-    })
+    axios.get(`https://api.rawg.io/api/genres?key=${api1}`)
+      .then(res => {
+        console.log(res.data.results)
+        setGenres(res.data.results)
+      })
+      .catch(error => {
+        console.error('Error fetching genres:', error);
+      });
+
+    axios.get(`https://api.rawg.io/api/platforms?key=${api1}`)
+      .then(res => {
+        // console.log(res.data.results)
+        setPlatforms(res.data.results)
+      })
+      .catch(error => {
+        console.error('Error fetching platforms:', error);
+      });
   }
 
   function getResults() {
@@ -77,7 +85,7 @@ export default function MNavbar() {
         }
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching search results:', error);
         setResults([]);
       });
   }

@@ -64,6 +64,7 @@ a {
 .articles .dets {
   width: 100%;
   height: 150px;
+  overflow: hidden;
 }
 
 .articles .text {
@@ -112,6 +113,7 @@ a {
   flex-wrap: wrap;
   align-items: center;
   gap: 15px;
+  overflow: auto;
 }
 .articles .info span{
   color: #333b6a;

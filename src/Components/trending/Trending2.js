@@ -8,7 +8,7 @@ export default function Trending2({ product }) {
       <Link to={`/game/${product.id}`}>
         <div className="articles">
             <div className="box">
-              <div className='metacritic'>{product.metacritic}%</div>
+              {product.metacritic && <div className='metacritic'>{product.metacritic}%</div>}
               <div className="backonly" style={{ backgroundImage: `url('${product.background_image}')` }}>
                 {/* <img src={product.background_image} /> */}
               </div>
@@ -17,7 +17,7 @@ export default function Trending2({ product }) {
                   <h2>{product.name}</h2>
                 </div>
                 <div className="info">
-                  {product.genres.map((genre) => (
+                  {product.genres.slice(0,3).map((genre) => (
                     <span key={genre.id}>{genre.name}</span>
                   ))}
                 </div>
