@@ -12,7 +12,7 @@ export default function Trending() {
         axios.get(`https://api.rawg.io/api/games?key=${api1}`).then((res) => {
             // console.log(res.data.results)
             setdata(res.data.results)
-        })
+        }).catch((error) => console.error("Failed to fetch game details:", error));
     }, []);
 
     return (

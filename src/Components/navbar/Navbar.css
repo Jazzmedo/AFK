@@ -43,7 +43,11 @@ ul li {
   border-bottom-right-radius: 20px; */
 
   * {
-    font-weight: 500 !important;
+    font-weight: 500;
+  }
+  .names{
+    font-weight: 600 !important;
+    margin: 0 !important;
   }
 }
 
@@ -82,22 +86,22 @@ ul li {
 
 .dropdown-menu {
   background-color: #b7feae !important;
-  color: '#b7feae'
+  color: '#b7feae';
 }
 
 .dropdown-menu .dropdown-item {
   background-color: #b7feae !important;
-  color: #333b6a
+  color: #333b6a;
 }
 
 .dropdown-menu .dropdown-item:hover {
   background-color: #b7feae !important;
-  color: #333b6a
+  color: #333b6a;
 }
 
 .dropdown-menu .dropdown-item:active {
   background-color: #b7feae !important;
-  color: '#b7feae'
+  color: '#b7feae';
 }
 
 .search-bar {
@@ -131,6 +135,7 @@ ul li {
 #searchInput::placeholder {
   color: #333b6a;
   font-weight: 600;
+  padding-top: 4px;
 
 }
 

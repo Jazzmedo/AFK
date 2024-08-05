@@ -30,7 +30,7 @@ function Platforms() {
     return (
         <>
 
-                <h1 style={{ marginTop: '50px', fontWeight: '700', color: '#b7feae' }}  className='text-center'>{platform.name}</h1>
+            <h1 style={{ marginTop: '50px', fontWeight: '700', color: '#b7feae' }} className='text-center'>{platform.name}</h1>
             <div className='row'>
                 {data.map((product) => {
                     return (

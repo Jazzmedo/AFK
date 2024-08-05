@@ -121,9 +121,17 @@ a {
   height: auto;
   width: fit-content;
   padding: 5px 10px;
+  padding-top: 7px;
   border-radius: 50px;
   background-color: #b7feae;
   font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  vertical-align: middle;
+}
+.articles .info span:hover{
+  color: #b7feae;
+  background-color: #333b6a;
+
 }
 
 .articles .info a,
@@ -138,7 +146,7 @@ a {
   transform: translateY(-20px);
   transition: 0.5s;
   box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.336);
-  
+  backdrop-filter: blur(10px);
 
 }
 

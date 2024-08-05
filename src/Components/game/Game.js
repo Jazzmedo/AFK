@@ -2,7 +2,8 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ApiContext } from '../context/ApiContextProvider';
-import './game.css'; // Importing external CSS for styling
+import { Link } from 'react-router-dom';
+import './epi.css'; // Importing external CSS for styling
 
 function Game() {
     let { gid } = useParams();
@@ -10,32 +11,55 @@ function Game() {
     let { api1 } = useContext(ApiContext);
 
     useEffect(() => {
+        getData();
+        if (data && data.background_image) {
+            document.body.style.cssText = `background-image: url('${data.background_image}');backdrop-filter:blur(3px)`;
+        }
+    }, [gid, api1, data]);
+
+    function getData() {
         axios.get(`https://api.rawg.io/api/games/${gid}?key=${api1}`)
             .then((res) => {
                 setData(res.data);
+                console.log(data)
             })
             .catch((error) => console.error("Failed to fetch game details:", error));
-        // document.body.style.cssText = `background-image: url(${data.background_image});backdrop-filter:blur(3px)`;
-    }, [gid, api1]);
-
+    }
     if (!data) {
         return <div>Loading...</div>;
     }
 
     return (
-        <div className="game-container">
-            <h1>{data.name}</h1>
-            <img src={data.background_image} alt={data.name} />
-            <p>{data.description}</p>
-            <div className="additional-info">
-                <p>Released: {data.released}</p>
-                <p>Rating: {data.rating}</p>
-                <p>Metacritic Score: {data.metacritic}</p>
-                <p>Playtime: {data.playtime} hours</p>
-                <p>ESRB Rating: {data.esrb_rating ? data.esrb_rating.name : 'Not Rated'}</p>
-                <a href={data.website}>Official Website</a>
+        <>
+            <div className="epiAll">
+                <div className="epidet">
+                    <div className="epiposter">
+                        <div className="conss">
+                            <img src={`${data.background_image}`} alt="" />
+                            <div className="votinggg force">{data.metacritic}%</div>
+                        </div>
+                            <div className="separator"></div>
+                        <div className="genres">
+                                {data.genres.map((genre) => (
+                                    <Link to={`/genre/${genre.id}`} key={genre.id}>
+                                        <div className='genree'>{genre.name}</div>
+                                    </Link>
+                                ))}
+                            </div>
+                    </div>
+                    <div className="epipdetails">
+                        <h1 className='trendsss white more'>{data.name}</h1>
+                        <h3><span>ESRB : {data.esrb_rating.name}</span>
+                            <span>Playtime : {data.playtime}H</span>
+                            <span>Released : {data.released}</span>
+                            <span>Rating : {data.rating}</span>
+                        </h3>
+                        <p className='paragraph'>{data.description_raw}</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </>
+
     );
 }
 

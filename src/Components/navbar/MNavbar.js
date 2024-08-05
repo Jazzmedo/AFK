@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css'; // Import the custom CSS file
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faTv, faFilm } from '@fortawesome/free-solid-svg-icons';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -27,7 +25,6 @@ export default function MNavbar() {
     document.getElementById('searchInput').addEventListener('input', function () {
       var input = this.value.toLowerCase();
       document.getElementById('dropdownMenu').style.display = input ? 'block' : 'none';
-      setSearchh(input)
     });
 
     getData()
@@ -53,7 +50,7 @@ export default function MNavbar() {
   function getData() {
     axios.get(`https://api.rawg.io/api/genres?key=${api1}`)
       .then(res => {
-        console.log(res.data.results)
+        // console.log(res.data.results)
         setGenres(res.data.results)
       })
       .catch(error => {
@@ -117,10 +114,10 @@ export default function MNavbar() {
               item ? (
                 <>
                   <Link key={item.id} to={`/game/${item.id}`} className="dropdown-item">
-                    <h6 className='.names'>{item.name}</h6>
+                    <h6 className='names'>{item.name}</h6>
                   </Link>
                 </>
-              ) : <></>) : <div className='dropdown-item'><h6 className='.names'>No Result Found</h6></div>}
+              ) : <></>) : <div className='dropdown-item'><h6 className='names'>No Result Found</h6></div>}
           </div>
         </div>
       </Container>
